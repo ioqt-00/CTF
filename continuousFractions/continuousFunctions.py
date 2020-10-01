@@ -38,7 +38,7 @@ def continuedFractionExpansion(a,b):
 	while r2!=0 and len(res)<1000:
 		q=r1//r2
 		res.append(q)
-		print(r1,r2,q)
+		#print(r1,r2,q)
 		(r1, u1, v1, r2, u2, v2)=(r2, u2, v2, r1-q*r2, u1-q*u2,v1-q*v2)
 
 	assert(u1*a+v1*b==r1)
@@ -79,7 +79,7 @@ t=int.from_bytes(b'test123456','big')
 c=modPow(t,E,N)
 
 continuedExpansionList=continuedFractionExpansion(E,N)
-print(continuedExpansionList)
+#print(continuedExpansionList)
 
 # ---- compute convergents denominators 
 
@@ -106,11 +106,6 @@ for i in range(2,len(continuedExpansionList)):
 
 	kList.append(p)
 	dList.append(q)
-
-for i in range(len(kList)):
-	print(kList[i])
-	print(dList[i])
-	print()
 
 # ----  test all d in the list
 
