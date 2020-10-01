@@ -1,4 +1,7 @@
 import sys
+import numpy
+
+import math
 
 def modPow(m,e,N): # for message, exponent, modulus
 	if e==0:
@@ -16,11 +19,11 @@ def extendedEuclide(a,b):
 	u2=0
 	v2=1
 	while r2!=0:
-		print(r1,r2)
+		#print(r1,r2)
 		q=r1//r2
 		(r1, u1, v1, r2, u2, v2)=(r2, u2, v2, r1-q*r2, u1-q*u2,v1-q*v2)
 
-	print(r1,u1,v1)
+#	print(r1,u1,v1)
 	assert(u1*a+v1*b==1)
 	return r1,u1,v1
 
@@ -44,19 +47,19 @@ def continuedFractionExpansion(a,b):
 def root(N,sqrt): # find M s.t. M**3=N
 	minM=1
 	l=len(str(N))
-	maxM=int('1'+'0'*(l//3))
+	maxM=int('1'+'0'*(l))
 	while True:
 		M=(maxM+minM)//2
-		print(maxM)
-		if M**3>N:
+		#print(minM)
+		if M**sqrt>N:
 			maxM=M
-		elif M**3<=N:
+		elif M**sqrt<=N:
 			minM=M
 		if maxM-minM==1:
-			if maxM==int('1'+'0'*(l//3)):
+			if maxM==int('1'+'0'*l):
 				print("Error")
-		else:
-		  return minM
+			else:
+				return minM
 
 
 sys.setrecursionlimit(5000)
@@ -72,7 +75,7 @@ N=0x0207a7df9d173f5969ad16dc318496b36be39fe581207e6ea318d3bfbe22c8b485600ba9811a
 #N=7978886869909
 #E=3594320245477
 
-t=int.from_bytes(b'test','big')
+t=int.from_bytes(b'test123456','big')
 c=modPow(t,E,N)
 
 continuedExpansionList=continuedFractionExpansion(E,N)
@@ -114,14 +117,14 @@ for i in range(len(kList)):
 for d,k in zip(dList,kList):
 	res=modPow(c,d,N).to_bytes(1000,'big')
 	res=''.join([chr(b) for b in res if b!=0])
-	if res=='test':
+	if res=='test123456':
 		print("WIN")
-		print(d,k)
-		print(res)
+		#print(d,k)
+		#print(res)
 		break
 	 
 print("d=",d,"\nk=",k)
-a,b=d,k
+a,b=k,d
 phi=(b*E-1)//a
 
 print("phi=",phi)
@@ -129,8 +132,21 @@ print("phi=",phi)
 a1=(N-phi+1)//2
 
 a2=a1*a1-N
-a2=a2*(1/2)
+a2=root(a2,2)
 
+p=a1-a2
+q=a1+a2
+
+print("p=",p)
+print("q=",q)
+
+# q * x + k * p = 1
+
+r,k,x=extendedEuclide(p,q)
+
+x=x+p
+
+print("inv_q=",x)
 
 
 """
