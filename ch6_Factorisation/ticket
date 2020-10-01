@@ -1,0 +1,18 @@
+
+RSA - Factorisation
+
+25 Points  0x0
+Décrypter le mot de passe de validation
+
+Le mot de passe de validation a été chiffré grâce à cette clé publique.
+
+ciphertext :
+
+e8oQDihsmkvjT3sZe+EE8lwNvBEsFegYF6+OOFOiR6gMtMZxxba/bIgLUD8pV3yEf0gOOfHuB5bC3vQmo7bE4PcIKfpFGZBA
+
+-----BEGIN PUBLIC KEY-----
+MGQwDQYJKoZIhvcNAQEBBQADUwAwUAJJAMLLsk/b+SO2Emjj8Ro4lt5FdLO6WHMM
+vWUpOIZOIiPu63BKF8/QjRa0aJGmFHR1mTnG5Jqv5/JZVUjHTB1/uNJM0VyyO0zQ
+owIDAQAB
+-----END PUBLIC KEY-----
+

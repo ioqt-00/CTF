@@ -1,0 +1,25 @@
+
+RSA - Clé privée corrompue 1
+
+    facebookgooglepluslinkedintwitter
+
+30 Points  0x0
+Exposant privé
+Auteur
+blackndoor,  28 novembre 2017
+Niveau  Difficulté
+Validations
+207 Challengeurs 1%
+Note  Notation
+1
+2
+3
+4
+5
+44 votes
+Énoncé
+
+Dans le cadre d’une enquête, nous avons récupéré le dump d’une clé USB.
+Une grande partie des informations sont corrompues, mais nous avons bon espoir que vous serez en mesure de déchiffrer le message secret.
+
+Déchiffrez le message pour obtenir le flag de validation.
