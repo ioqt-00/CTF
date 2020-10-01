@@ -41,7 +41,7 @@ def continuedFractionExpansion(a,b):
 	assert(u1*a+v1*b==r1)
 	return(res)
 
-def cubeRoot(N): # find M s.t. M**3=N
+def root(N,sqrt): # find M s.t. M**3=N
 	minM=1
 	l=len(str(N))
 	maxM=int('1'+'0'*(l//3))
@@ -120,7 +120,7 @@ for d,k in zip(dList,kList):
 		print(res)
 		break
 	 
-print(d,k)
+print("d=",d,"\nk=",k)
 a,b=d,k
 phi=(b*E-1)//a
 
